@@ -1,40 +1,121 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style type="text/css">
-  	.timer
-  	{
-  		margin-left: 15%;
-  	}
-    .abc
-    {
-      max-width: 360px;
-      width: 300px;
-     margin-left: 15%;
-      
-      /*padding: 2.5rem; */
-    }
+  <title>CORONA_RECORD_BOOK_INDIA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 
 
 
-  </style>
+  
 </head>
 <body>
+ 
+<nav class="navbar navbar-expand-lg navbar-light"style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#"><h3>Covid-19 India</h3></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<div class="container">
-  <center><h1>MITRON HAPPY APRIL FOOL'S DAY</h1></center>
-  <center><p><h3>Kripya Galat Fehmee na Paale aur Padhne Bethe.</h3></p></center>
-  <div class="abc"><img src="https://www.memecreator.org/static/images/templates/654955.jpg"></div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
 
- <div class="timer">
-  <P><h3>YOU ARE CHU*** NUMBER=><h3></P><div id="sfcm94zf9ks8pxdc5ptaj782uau45yplzed"></div><script type="text/javascript" src="https://counter11.stat.ovh/private/counter.js?c=m94zf9ks8pxdc5ptaj782uau45yplzed&down=async" async></script><noscript><a href="https://www.freecounterstat.com" title="page view counter"><img src="https://counter11.stat.ovh/private/freecounterstat.php?c=m94zf9ks8pxdc5ptaj782uau45yplzed" border="0" title="page view counter" alt="page view counter"></a></noscript>
+<div class="container-fluid">
+
+   <div class="row" style="padding-top: 20px;">
+    <div class="col-2"> </div>  
+
+        <div class="col-8  dangercard">
+         
+            <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+               <div class="card-header"><h6>Total confirmed cases</h6><h2><center>2906</center></h2></div>
+                  <div class="card-body">
+                   <h5 class="card-title">Track your State</h5>
+                   <p class="card-text">Click on any state from the map and Track its COVID-19 records.</p>
+                   <h4><p id="demo"></p></h4>
+
+                   <form name = "myform">
+                      <input type = "text" class="form-control" name = "stage" size = "20" />
+                   </form>
+                 </div>
+            </div>     
+          
+        </div>
+    <div class="col-2"> </div>
+  </div>
+  <div class="container">
+    
+      <img src="image/map1.png" class="img-fluid" usemap="#image_map">
+      <map name="image_map">
+
+        <area shape="poly" 
+            coords="263,103 261,68 283,58 245,34 324,13 389,50 440,42 471,47 436,86 451,119 429,125 355,101 309,124 264,102 "
+           
+            target = "_self" 
+            onclick = "showTutorial('30')"
+            onclick="myFunction('j&k');" 
+            onMouseOut = "showTutorial('30')"/>
+
+        <area shape="poly" 
+            coords="330,138 354,162 384,187 386,168 408,163 423,168 416,139 384,120 343,118 "
+           
+            target = "_self" 
+            onclick = "showTutorial('100')" 
+            onMouseOut = "showTutorial('100')"/>
+
+
+
+      </map> 
+ 
+      
+
+  </div>
+
+  
+   
+
+
 </div>
 
+ <!--map script-->
+  <script type = "text/javascript">
+         
+            function showTutorial(name) {
+               document.myform.stage.value = name
+                         }
+            function myFunction(state) {
+            document.getElementById("demo").innerHTML = "NO. of victims in " +state+ " is " + "."; 
+                                  }
+                     
+      </script>
 
-</div>
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
