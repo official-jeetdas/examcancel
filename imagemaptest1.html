@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fgggh</title>
+</head>
+<body>
+
+ <form name = "myform">
+                      <input type = "text" class="form-control" name = "stage" size = "20" />
+                   </form>
+<div style="width:100%;">
+    <img id="img_ID" src="image/map1.png" usemap="#map" border="0" width="100%" alt="" />
+</div>
+<map id="map_ID" name="map">
+ 			<area shape="poly" 
+            coords="263,103 261,68 283,58 245,34 324,13 389,50 440,42 471,47 436,86 451,119 429,125 355,101 309,124 264,102 "
+           
+            target = "_self" 
+            onclick = "showTutorial('30')"
+            onclick="myFunction('j&k');" 
+            onMouseOut = "showTutorial('30')"/>
+
+        	<area shape="poly" 
+            coords="330,138 354,162 384,187 386,168 408,163 423,168 416,139 384,120 343,118 "
+           
+            target = "_self" 
+            onclick = "showTutorial('100')" 
+            onMouseOut = "showTutorial('100')"/>
+
+</map>
+<script type="text/javascript">
+
+
+            function showTutorial(name) {
+               document.myform.stage.value = name
+                         }
+            function myFunction(state) {
+            document.getElementById("demo").innerHTML = "NO. of victims in " +state+ " is " + "."; 
+                                  }
+
+
+	
+window.onload = function () {
+    var ImageMap = function (map, img) {
+            var n,
+                areas = map.getElementsByTagName('area'),
+                len = areas.length,
+                coords = [],
+                previousWidth = 128;
+            for (n = 0; n < len; n++) {
+                coords[n] = areas[n].coords.split(',');
+            }
+            this.resize = function () {
+                var n, m, clen,
+                    x = img.offsetWidth / previousWidth;
+                for (n = 0; n < len; n++) {
+                    clen = coords[n].length;
+                    for (m = 0; m < clen; m++) {
+                        coords[n][m] *= x;
+                    }
+                    areas[n].coords = coords[n].join(',');
+                }
+                previousWidth = img.offsetWidth;
+                return true;
+            };
+            window.onresize = this.resize;
+        },
+        imageMap = new ImageMap(document.getElementById('map_ID'), document.getElementById('img_ID'));
+    imageMap.resize();
+    return;
+}
+</script>
+</body>
+</html>
