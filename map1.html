@@ -1,45 +1,19 @@
-<html>   
-   <head>
-      <title>Using JavaScript Image Map</title>
-      
-      <script type = "text/javascript">
-         <!--
-            function showTutorial(name) {
-               document.myform.stage.value = name
-            }
-         //-->
-      </script>
-   </head>
-   
-   <body>
-      <form name = "myform">
-         <input type = "text" name = "stage" size = "20" />
-      </form>
-      
-      <!-- Create  Mappings -->
-      <img src = "https://www.tutorialspoint.com/javascript/images/usemap.gif" alt = "HTML Map" border = "0" usemap = "#tutorials"/>
-      
-      <map name = "tutorials">
-         <area shape="poly" 
-            coords = "74,0,113,29,98,72,52,72,38,27"
-            href = "/perl/index.htm" alt = "Perl Tutorial"
-            target = "_self" 
-            onMouseOver = "showTutorial('kalyanjit')" 
-            onMouseOut = "showTutorial('')"/>
-         
-         <area shape = "rect" 
-            coords = "22,83,126,125"
-            href = "/html/index.htm" alt = "HTML Tutorial" 
-            target = "_self" 
-            onMouseOver = "showTutorial('html')" 
-            onMouseOut = "showTutorial('')"/>
-         
-         <area shape = "circle" 
-            coords = "73,168,32"
-            href = "/php/index.htm" alt = "PHP Tutorial"
-            target = "_self" 
-            onMouseOver = "showTutorial('php')" 
-            onMouseOut = "showTutorial('')"/>
-      </map>
-   </body>
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click "Try it" to call a function with arguments</p>
+
+<button onclick="myFunction('Jammu Kashmir','100')">jammu Kashmir</button>
+<button onclick="myFunction('punjab','13')">punjab</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction(name,job) {
+  document.getElementById("demo").innerHTML = "Total No of victims in " + name + " is " + job + ".";
+}
+</script>
+
+</body>
 </html>
