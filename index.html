@@ -50,10 +50,6 @@
   </div>
 </nav>
 
-<div class="spinner-border" role="status">
-  <span class="sr-only">Loading...</span>
-</div>
-
 <div class="container-fluid">
 
 
@@ -69,9 +65,33 @@
                    <p class="card-text">Click on any state from the map and Track its COVID-19 records.</p>
                    <p id="demo"></p>
 
-                   <form name = "myform">
-                      <input type = "text" class="form-control" name = "stage" size = "20" />
-                   </form>
+                    <div class="row">
+                  <div class="col-4">
+                  <div class="card">
+                  <div class="card-body">
+                  <p class="card-text" style="color: black;">30</p>   
+                  </div>
+                  </div>
+                  </div>
+
+                  <div class="col-4">
+                  <div class="card">
+                  <div class="card-body">
+                  <p class="card-text">30</p>   
+                  </div>
+                  </div>
+                  </div>
+
+                  <div class="col-4">
+                  <div class="card" >
+                  <div class="card-body">
+                  <p class="card-text">30</p>   
+                  </div>
+                  </div>
+                  </div>
+
+                  </div>
+                
                  </div>
             </div>     
           
@@ -343,11 +363,9 @@
  <!--map script-->
   <script type = "text/javascript">
          
-            function showTutorial(name) {
-               document.myform.stage.value = name
-                         }
+            
             function myFunction(name,job) {
-            document.getElementById("demo").innerHTML = "Showing total no. of Positive cases from<h4>" + name + ":</h4>";
+            document.getElementById("demo").innerHTML = "Showing total no. of Positive cases from<h5>" + name + ":</h5>" + job + ".";
                                           }
 
             /*----------------------------------------------------------------*/

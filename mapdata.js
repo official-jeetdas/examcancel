@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>map test2</title>
-
-
-<script type="text/javascript">
-	
 var simplemaps_countrymap_mapdata={
   main_settings: {
    //General settings
@@ -271,13 +263,3 @@ var simplemaps_countrymap_mapdata={
   labels: {},
   regions: {}
 };
-
-	
-</script>
-
-
-</head>
-<body>
-<div id="map"></div>
-</body>
-</html>
