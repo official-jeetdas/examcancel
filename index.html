@@ -1,318 +1,284 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<meta charset="utf-8" />
-	<title>Responsive Image Maps jQuery Plugin</title>
-	<meta name="HandheldFriendly" content="True" />
-	<meta name="MobileOptimized" content="320" />
-	<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1" />
-	<script src="../../js/ios-orientationchange-fix.min.js"></script>
-	<style>
-	body {
-		font-family: Helvetica, Arial, sans-serif;
-	}
-	h1 {
-		font-size: 20px;
-	}
-	div {
-		width: 100%;
-	}
-	img[usemap] {
-		border: none;
-		height: auto;
-		max-width: 100%;
-		width: auto;
-	}
-	</style>
-</head>
-<body>
-<div>
-	<h1>Responsive Image Maps jQuery Plugin</h1>
-	<p>Allows image maps to be used in a responsive design by recalculating the area coordinates to match the actual image size on load and window.resize.</p>
-	<p id="demo"></p>
-	<div class="mapbody">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 
+  <style>
+    .card {
+      margin: 0 auto;
+      float: none;
+      margin-top: 3%;
+      margin-bottom: 10px;
+    }
+
+
+    .btn-group {
+      margin-left: -10%;
+      position: relative;
+     
+    }
+
+    .btn {
+      margin: 3%;
+    }
+
+    .btn-danger {
+      background-color: #ff4d4d;
+    }
+
+    .mapbody {
+      margin-top: 5%;
+    }
+   
     
-      <img src="image/India-map.png"  usemap="#image_map">
-      <map name="image_map">
+    
+  </style>
+  <title>Title</title>
+</head>
 
-          
+<body class="text-monospace">
 
-            <map id="map_ID" name="map">
-            <area shape="poly" 
-            title="Jammu & Kashmir" 
-            coords="63,22,90,8,107,17,117,27,137,29,153,24,165,30,160,42,147,50,155,68,146,72,131,65,124,65,118,60,108,64,106,70,101,74,78,63,74,43,82,36"            
-            target = "_self" 
-            onclick="myFunction('Jammu Kashmir','32')"
-            
-            />
+  <nav class="navbar navbar-light" style="background-color:#ff6666">
+    <a class="navbar-brand" href="#" style="color: azure">
+      <h3>Covid tracker India</h3>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        Navbar text with an inline element
+      </span>
+  </nav>
 
-          <area shape="poly" 
-            title="Himachal Pradesh" 
-            coords="117,62,108,64,105,76,111,86,122,93,129,98,131,91,137,86,145,88,143,76,139,69,131,66"           
-            target = "_self" 
-            onclick="myFunction('Himachal_pradesh','665')" 
-            />
+  <section class="main" style="background-color:  #fae6ff">
+    <div class="container text-center">
 
-             <area shape="poly" 
-            title="Uttarakhand" 
-            coords="132,99,134,92,140,89,145,89,150,85,174,101,167,106,161,119,147,116,146,111,140,107,135,107"
-            target = "_self" 
-            onclick="myFunction('uttarakhand','4')"
-              
-            />
+      <div class="row">
+        <div class="card text-center">
+          <div class="card-header">
+            <h5 class="card-title">
+              <p class="card-text" id="demo"> Select Your State </p>
 
-             <area shape="poly" 
-            title="Punjab" 
-            coords="102,75,110,86,120,95,116,103,106,108,100,108,96,104,91,104,85,103,81,98,90,91,89,79"         
-            target = "_self" 
-            onclick="myFunction('punjab','643')"
-              
-            />
+            </h5>
 
-            <area shape="poly" 
-            title="Haryana" 
-            coords="90,105,90,113,102,119,110,132,122,135,128,128,118,128,117,118,124,115,126,105,130,102,122,96,112,107,103,109"         
-            target = "_self" 
-            onclick="myFunction('Haryana','54')"
-              
-            />
+          </div>
+          <div class="card-body">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-danger">Active</button>
+              <button type="button" class="btn btn-success">Recovered</button>
+              <button type="button" class="btn btn-secondary">Death&nbsp;</button>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                  <p class="text-right" id="demo1"></p>
+                </div>
 
-            <area shape="poly" 
-            title="Uttar Pradesh" coords="129,102,125,116,129,128,126,134,132,145,150,150,146,162,138,169,139,177,146,182,146,168,164,167,174,170,182,169,197,174,198,183,203,184,207,174,204,168,213,159,221,159,212,153,215,148,211,138,187,134,169,123,156,121,145,114,140,109,133,109"        
-            target = "_self" 
-            onclick="myFunction('Uttar_pradesh','32')"
-              
-            />
+                <div class="col-4">
+                    <p  id="demo2"></p>
+                  </div>
 
+                  <div class="col-4">
+                      <p  id="demo3" class="text-left"></p>
+                    </div>
 
-            <area shape="poly" 
-            title="Rajasthan" 
-            coords="80,102,74,105,51,130,43,134,36,131,25,146,32,149,32,157,40,161,46,175,57,174,72,181,77,188,88,197,93,187,94,171,103,172,108,176,104,185,111,181,120,181,121,173,126,170,121,168,115,163,117,158,137,147,129,147,130,143,125,135,118,135,109,133,100,119,89,114,87,105"        
-            target = "_self" 
-            onclick="myFunction('Rajasthan','15')"
-              
-            />
-
-            <area shape="poly" 
-            title="Gujarat" 
-            coords="44,176,56,176,74,186,88,199,83,204,82,213,83,218,79,222,79,229,75,229,71,236,66,233,62,207,58,222,38,229,15,206,33,203,24,200,6,190,6,184,14,183,18,179,26,181,39,180"       
-            target = "_self" 
-            onclick="myFunction('Gujarat','220')"
-              
-            />
-
-            <area shape="POLY" 
-            title="DELHI" 
-            coords="119,119,127,119,126,127,118,126"      
-            target = "_self" 
-            onclick="myFunction('Delhi','350')"
-              
-            />
-
-            <area shape="polygon" 
-             title="Madhya Pradesh"
-             coords="136,148,148,151,146,161,138,167,136,176,145,184,147,169,164,170,181,171,196,176,196,184,190,186,182,186,182,190,188,194,182,204,178,204,171,218,162,216,153,215,141,218,132,218,131,214,122,215,115,223,110,219,90,214,86,210,86,204,92,197,95,188,96,173,102,174,108,176,104,185,112,184,121,184,123,176,129,169,122,166,117,164,119,159"        
-            target = "_self" 
-            onclick="myFunction('Madhya_Pradesh','332')"
-             
-            />
-
-            <area shape="poly" 
-           title="Maharashtra" 
-           coords="85,218,79,231,71,237,67,235,65,242,68,258,76,291,87,292,86,284,102,277,102,271,113,272,125,257,129,259,135,248,141,239,150,243,163,244,164,252,167,253,167,247,173,244,169,236,171,230,168,220,155,218,140,221,132,221,129,217,123,217,115,225,109,221,90,215"      
-            target = "_self" 
-            onclick="myFunction('Maharashtra','85')"
-              
-            />
-
-             <area shape="poly" 
-           title="Chattisgarh" 
-           coords="183,187,201,185,206,181,208,186,216,196,214,205,209,207,206,220,197,221,194,224,197,238,189,236,193,251,183,264,179,265,179,261,169,255,170,249,177,244,171,239,173,231,170,223,179,206,184,206,190,193"
-          target = "_self" 
-           onclick="myFunction('Chattisgarh','86')"
-              
-            />
-
-            <area shape="poly" 
-          title="Orissa"
-          coords="259,216,248,209,240,207,236,211,225,211,225,205,216,206,211,209,207,223,198,222,196,226,199,238,192,239,194,251,187,262,194,259,200,259,207,247,213,251,221,250,243,238,252,230,251,221"     
-            target = "_self" 
-         onclick="myFunction('Orissa','87')"
-              
-            />
-
-             <area shape="poly" 
-            title="Jharkhand"
-            coords="208,175,207,183,219,195,215,203,226,204,229,209,238,209,237,204,249,207,236,193,238,188,259,180,259,168,256,168,250,177,242,179,234,176,219,180"    
-            target = "_self" 
-            onclick="myFunction('Jharkhand','88')"
-             
-            />
-
-             <area shape="poly" 
-            title="Bihar" coords="212,137,219,148,215,151,223,158,215,160,207,167,208,175,218,178,235,174,242,177,251,171,256,166,261,166,262,153,237,149"  
-            target = "_self" 
-          onclick="myFunction('Bihar','89')"
-              
-            />
-
-            <area shape="poly" 
-           title="West Bengal" 
-           coords="260,216,251,208,245,198,236,193,246,189,257,184,262,178,262,168,263,153,263,142,275,144,287,149,286,156,273,152,269,161,275,167,268,175,274,183,275,193,278,216,268,217"  
-            target = "_self" 
-            onclick="myFunction('West_Bengal','91')"
-             
-            />
-
-            <area shape="RECT" 
-            title="Sikkim" 
-            coords="264,126,278,142"
-            target = "_self" 
-            onclick="myFunction('Sikkim','1')"
-              
-            />
-
-            <area shape="polygon" 
-            title="Arunachal Pradesh" 
-            coords="311,135,333,123,349,113,358,115,369,112,374,119,379,127,388,129,385,139,370,140,360,145,359,140,368,135,364,129,346,133,340,142,320,143"   
-            target = "_self" 
-           onclick="myFunction('Arunachal_pradesh','4')"
-              
-            />
-
-            <area shape="polygon" 
-            title="Assam" 
-            coords="289,157,289,147,294,144,319,145,340,144,347,134,363,131,364,136,346,149,334,162,331,176,325,179,321,174,327,165,319,156,306,157" 
-            target = "_self" 
-            onclick="myFunction('assam','20')"
-              
-            />
+            </div>
 
 
-            <area shape="polygon" 
-            title="Mizoram" 
-            coords="327,179,320,188,324,209,330,209,335,192,333,184"
-            target = "_self" 
-           onclick="myFunction('Mizoram','2')"
-              
-            />
+          </div>
+        </div>
 
-            <area shape="polygon" 
-            title="Nagaland" 
-            coords="361,149,358,143,346,151,336,161,336,167,343,164,352,164"
-            target = "_self" 
-           onclick="myFunction('Nagaland','93')"
-              
-            />
-
-            <area shape="polygon" 
-            title="Meghalaya"
-            coords="286,157,318,158,324,167,319,171,288,167"
-            target = "_self" 
-            onclick="myFunction('Meghalaya','0')"
-              
-            />
-
-             <area shape="polygon" 
-            title="Tripura" 
-            coords="319,175,308,182,305,188,309,197,315,199,318,188,323,181" 
-            target = "_self" 
-            onclick="myFunction('Tripura','1')"
-              
-            />
-
-             <area  shape="polygon"
-             title="Manipur" coords="336,171,342,165,352,165,346,186,330,181" 
-            target = "_self" 
-            onclick="myFunction('Manipur','1')"
-             
-            />
-
-            <area shape="polygon" 
-            title="Karnataka" 
-            coords="125,260,113,275,104,274,104,278,97,279,89,286,88,304,86,310,93,333,101,337,113,346,120,347,130,345,129,337,134,331,137,333,138,328,134,322,122,322,119,313,117,305,121,292,130,292,124,284,129,262"
-            target = "_self" 
-            onclick="myFunction('karnataka','95')"
-              
-            />
-
-            <area shape="RECT"
-            title="Goa" 
-            coords="72,294,88,305" 
-            target = "_self" 
-            onclick="myFunction('Goa','96')"
-              
-            />
-
-            <area shape="polygon" 
-            title="Telangana" 
-            coords="142,240,130,260,127,284,129,291,135,292,148,288,155,282,161,278,172,275,182,270,182,266,176,266,176,260,162,254,162,245"
-            target = "_self" 
-            onclick="myFunction('telengana','97')"
-              
-            />
-
-            <area shape="polygon" 
-            title="Andhra Pradesh" 
-            coords="207,251,200,261,192,260,185,267,182,272,164,279,153,285,147,292,133,293,123,293,120,305,121,314,126,320,133,318,141,325,140,335,148,329,163,325,163,299,173,293,178,286,190,283,192,274,218,253"
-            target = "_self" 
-            onclick="myFunction('Andhra_pradesh','98')"
-              
-            />
-
-            <area shape="polygon" 
-            title="Tamil Nadu" 
-            coords="163,326,154,329,141,336,133,335,132,347,117,349,121,357,124,363,128,366,128,378,125,392,130,396,135,394,139,382,153,384,149,374,157,368"
-            target = "_self" 
-            onclick="myFunction('Tamilnadu','99')"
-             
-            />
-
-            <area shape="polygon" 
-            title="Kerala" 
-            coords="95,336,114,383,123,394,127,378,126,368,119,368,122,359,111,347"
-            target = "_self" 
-           onclick="myFunction('kerela','100')"
-              
-            />
-
-            <area shape="POLY" 
-            title="Andaman and Nicobar" 
-            coords="326,323,316,355,322,386,342,417,337,388,331,358,351,327"
-            target = "_self" 
-            onclick="myFunction('kerela','100')"
-            />
-
-            <area shape="rect" coords="2,408,116,426" href="http://cmap.comersis.com" target="_blank" alt="clickable map of India">
+        <div class="col-lg-6 col-md-12 ">
+          <div class="mapbody">
 
 
-      </map> 
- 
+            <img src="India-map1.png" usemap="#image_map">
+            <map name="image_map">
+
+
+
+              <map id="map_ID" name="map">
+                <area shape="poly" title="Jammu & Kashmir"
+                  coords="50,13,76,3,89,8,93,15,108,19,124,14,136,20,133,29,127,36,121,35,122,40,127,49,120,53,116,50,97,44,88,47,88,51,82,53,62,45,61,30,67,23,50,14,51,12"
+                  target="_self" onclick="myFunction('Jammu Kashmir','32');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="poly" title="Himachal Pradesh"
+                  coords="85,55,91,64,95,63,99,69,108,73,106,67,114,62,120,64,118,55,114,51,96,45,88,48,90,52,85,55"
+                  target="_self" onclick="myFunction('Himachal_pradesh','665');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="poly" title="Uttarakhand"
+                  coords="118,64,111,65,108,68,109,75,109,80,114,79,120,82,121,86,132,89,132,86,135,80,140,75,131,68,124,66,122,62,117,64"
+                  target="_self" onclick="myFunction('uttarakhand','4');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="poly" title="Punjab"
+                  coords="81,53,73,58,73,68,65,73,66,76,73,78,78,77,82,80,89,80,92,75,98,71,95,65,91,66,84,55,81,53"
+                  target="_self" onclick="myFunction('punjab','643');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="poly" title="Haryana"
+                  coords="99,70,99,72,93,75,90,81,82,81,78,78,72,79,74,83,84,85,85,92,90,96,90,99,94,97,98,96,100,100,103,100,103,94,101,96,97,94,97,88,101,88,101,76,104,74,99,70"
+                  target="_self" onclick="myFunction('Haryana','54');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="poly" title="Uttar Pradesh"
+                  coords="106,75,103,77,103,89,105,90,105,94,104,101,107,107,105,111,113,110,123,114,120,123,115,124,114,132,114,135,120,138,121,132,116,126,121,124,121,127,127,127,132,128,136,125,137,130,143,127,142,130,147,129,149,126,155,130,163,132,163,140,168,139,171,131,168,127,177,120,182,120,176,116,175,112,179,111,174,104,162,102,145,96,133,90,130,90,119,86,117,82,114,81,108,81,106,75"
+                  target="_self" onclick="myFunction('Uttar_pradesh','32');actv('121');rcvrd('23');dths('13');" />
+
+
+                <area shape="poly" title="Rajasthan"
+                  coords="64,75,39,99,31,101,30,98,27,98,18,109,25,113,25,120,30,122,35,132,47,132,54,136,58,135,61,140,61,142,71,150,77,143,76,131,84,130,89,133,88,139,90,137,98,137,99,134,97,131,98,128,103,128,103,127,97,126,94,121,111,111,104,112,105,107,103,102,98,101,97,98,91,101,88,101,89,97,83,92,82,86,74,85,72,83,71,79,65,77,64,75"
+                  target="_self" onclick="myFunction('Rajasthan','15');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="poly" title="Gujarat"
+                  coords="4,142,4,139,10,139,12,136,19,136,20,138,34,136,34,133,46,133,52,136,53,137,57,136,59,140,60,143,71,152,67,155,68,160,64,162,64,164,66,166,62,169,64,172,64,174,60,174,59,179,54,177,54,171,52,170,54,163,49,157,47,167,33,173,26,171,12,157,22,156,28,150,19,152,7,148,4,142"
+                  target="_self" onclick="myFunction('Gujarat','220');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="circle" title="DELHI" coords="101,92,3" target="_self"
+                  onclick="myFunction('Delhi','350');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="polygon" title="Madhya Pradesh"
+                  coords="69,161,69,156,73,152,72,150,79,143,78,132,83,132,86,133,87,141,90,138,98,139,101,135,99,130,105,128,104,126,98,125,96,121,114,112,121,115,119,122,114,123,112,135,120,139,123,132,119,126,122,129,133,129,135,127,136,131,141,130,147,131,150,127,154,131,162,133,162,140,149,141,150,146,154,145,156,148,149,155,145,155,141,166,136,164,122,163,120,165,114,165,110,167,109,167,107,162,100,163,95,169,91,169,90,166,73,163,69,161,69,160"
+                  target="_self" onclick="myFunction('Madhya_Pradesh','332');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="poly" title="Maharashtra"
+                  coords="53,178,52,184,54,192,55,199,59,209,59,215,61,223,63,226,69,226,71,222,69,219,70,216,72,216,77,213,85,213,85,207,92,208,94,205,99,203,100,200,103,198,106,197,109,195,108,193,108,191,110,187,113,187,115,181,122,184,124,185,129,185,134,187,135,192,137,193,137,191,142,186,139,181,139,179,140,176,138,170,139,167,135,165,122,165,123,167,114,166,111,168,108,168,106,163,100,164,95,171,90,171,88,167,73,164,68,162,66,163,68,166,65,169,66,173,66,176,62,176,61,180,56,180,53,178"
+                  target="_self" onclick="myFunction('Maharashtra','85');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="poly" title="Chattisgarh"
+                  coords="141,167,139,170,141,175,142,178,140,182,145,186,144,188,139,190,139,195,146,200,147,203,150,203,159,192,155,181,160,180,160,181,159,170,165,167,169,167,173,157,179,149,169,139,163,141,151,142,151,144,155,144,158,148,149,157,146,156,142,168,140,167"
+                  target="_self" onclick="myFunction('Chattisgarh','86');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="poly" title="Orissa"
+                  coords="212,165,206,159,197,156,197,160,185,160,184,157,175,156,170,168,163,169,160,171,161,181,156,182,160,192,150,204,158,201,159,198,165,197,165,195,171,189,174,192,178,194,182,190,197,183,208,173,206,168,212,165"
+                  target="_self" onclick="myFunction('Orissa','87');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="poly" title="Jharkhand"
+                  coords="214,127,210,127,206,134,202,134,202,136,199,136,194,132,192,133,187,136,183,135,179,136,177,136,177,134,171,134,171,138,174,141,177,142,177,144,178,145,178,148,181,148,181,150,178,154,186,154,186,158,194,158,195,154,205,157,199,150,194,149,194,143,199,143,208,140,215,135,214,127"
+                  target="_self" onclick="myFunction('Jharkhand','88');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="poly" title="Bihar"
+                  coords="175,103,180,111,176,113,177,116,183,120,177,121,169,127,172,131,173,133,177,133,180,135,183,133,186,134,192,132,194,130,200,134,203,132,205,132,211,125,214,125,216,122,215,120,215,117,218,115,210,114,207,113,205,114,199,113,194,112,192,109,187,110,183,108,180,104,175,103"
+                  target="_self" onclick="myFunction('Bihar','89');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="poly" title="West Bengal"
+                  coords="237,111,227,108,219,108,219,115,216,118,217,121,215,126,216,135,199,145,195,146,195,147,201,148,208,160,214,164,218,162,221,165,229,164,228,148,224,142,227,139,226,136,219,133,219,130,222,130,223,127,228,126,228,125,220,121,220,115,224,113,229,116,237,117,237,111"
+                  target="_self" onclick="myFunction('West_Bengal','91');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="poly" title="Sikkim" coords="226,96,219,99,218,107,226,107,227,97,226,96" target="_self"
+                  onclick="myFunction('Sikkim','1');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="polygon" title="Arunachal Pradesh"
+                  coords="258,100,258,103,262,103,262,107,262,109,267,109,281,107,286,100,302,97,305,104,300,104,297,108,299,111,309,105,314,105,315,100,319,98,317,94,307,94,311,89,309,87,306,88,306,86,308,84,303,84,297,87,289,85,282,89,275,91,274,96,266,100,258,100"
+                  target="_self" onclick="myFunction('Arunachal_pradesh','4');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="polygon" title="Assam"
+                  coords="238,111,238,120,245,118,253,120,259,117,263,118,264,121,269,122,271,125,266,130,265,134,267,136,271,133,273,134,277,126,276,123,283,117,287,112,296,108,300,103,304,103,302,98,287,101,281,108,269,110,238,111"
+                  target="_self" onclick="myFunction('assam','20');actv('121');rcvrd('23');dths('13');" />
+
+
+                <area shape="polygon" title="Mizoram"
+                  coords="268,136,265,143,269,158,271,160,275,158,274,151,277,146,277,140,272,137,272,134,268,136"
+                  target="_self" onclick="myFunction('Mizoram','2');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="polygon" title="Nagaland"
+                  coords="296,109,287,113,283,119,277,123,279,126,282,122,291,122,291,124,294,120,295,113,298,111,296,109"
+                  target="_self" onclick="myFunction('Nagaland','93');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="polygon" title="Meghalaya"
+                  coords="238,120,238,126,263,127,265,129,270,125,267,122,264,122,262,118,259,118,253,121,245,119,238,120"
+                  target="_self" onclick="myFunction('Meghalaya','0');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="polygon" title="Tripura"
+                  coords="263,134,260,137,254,139,252,143,254,146,255,148,259,149,260,146,261,142,264,142,266,137,264,134"
+                  target="_self" onclick="myFunction('Tripura','1');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="polygon" title="Manipur"
+                  coords="278,126,274,135,274,136,285,140,290,130,289,123,282,123,280,127,277,126" target="_self"
+                  onclick="myFunction('Manipur','1');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="polygon" title="Karnataka"
+                  coords="104,199,100,202,100,204,94,207,94,210,86,209,86,214,78,214,73,217,70,217,70,219,72,222,70,227,70,233,68,235,71,240,75,252,77,257,82,258,83,262,91,267,98,269,99,267,103,267,107,264,107,256,113,256,116,254,108,244,106,247,102,245,96,238,97,232,100,231,99,228,100,223,103,223,102,217,104,205,104,200"
+                  target="_self" onclick="myFunction('karnataka','95');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="RECT" title="Goa" coords="63,227,69,227,69,233,67,235,65,233,65,229,63,227" target="_self"
+                  onclick="myFunction('Goa','96');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="polygon" title="Telangana"
+                  coords="116,183,115,189,110,189,110,192,111,194,106,199,105,207,104,211,103,215,103,218,104,220,104,223,110,224,113,221,119,221,122,220,123,217,130,215,133,211,138,211,149,206,145,204,145,201,137,194,134,194,133,187,126,186,120,186,116,184"
+                  target="_self" onclick="myFunction('telengana','97'); acases('12'); rcvrd('23'); dths('9')" />
+
+                <area shape="polygon" title="Andhra Pradesh"
+                  coords="101,224,100,229,101,230,102,231,97,234,97,237,105,245,108,243,117,253,123,253,126,250,129,251,134,248,132,228,138,223,142,224,145,219,156,216,155,211,177,194,170,191,166,195,166,198,160,199,158,202,149,205,150,207,138,212,133,213,131,216,124,218,123,221,118,223,113,222,111,225,101,224"
+                  target="_self" onclick="myFunction('Andhra_pradesh','98');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="polygon" title="Tamil Nadu"
+                  coords="134,249,129,252,126,251,124,254,117,254,114,257,108,258,108,264,103,268,99,269,94,269,100,279,103,280,102,287,105,290,102,295,102,304,107,303,111,300,111,296,119,292,125,281,129,281,129,265,134,255,134,249"
+                  target="_self" onclick="myFunction('Tamilnadu','99');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="polygon" title="Kerala"
+                  coords="77,258,79,264,84,269,93,295,101,304,101,295,103,290,101,286,102,281,98,282,98,277,94,271,90,268,82,262,77,258"
+                  target="_self" onclick="myFunction('kerela','100');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="POLY" title="Andaman and Nicobar"
+                  coords="326,323,316,355,322,386,342,417,337,388,331,358,351,327" target="_self"
+                  onclick="myFunction('kerela','100');actv('121');rcvrd('23');dths('13');" />
+
+                <area shape="rect" coords="2,408,116,426" href="http://cmap.comersis.com" target="_blank"
+                  alt="clickable map of India">
+
+
+              </map>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+
+
+    function myFunction(name, job) {
+      document.getElementById("demo").innerHTML = "Showing total no. of cases from<h3>" + name + ":</h3><hr>" + job;
+    }
+
+    function actv(active) {
+      document.getElementById("demo1").innerHTML =  active;
+    }
+
+    function rcvrd(Recovered) {
+      document.getElementById("demo2").innerHTML =  Recovered;
+    }
+
+    function dths(Death) {
+      document.getElementById("demo3").innerHTML =  Death;
+    }
+
+
+    function myFun() {
       
 
-  </div>
-</div>
+      document.getElementById("demo").style.fontFamily = "courier";
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="jquery.rwdImageMaps.min.js"></script>
-<script type = "text/javascript">
-$(document).ready(function(e) {
-	$('img[usemap]').rwdImageMaps();
-	
-	$('area').on('click', function() {
-		alert($(this).attr('alt') + ' clicked');
-	});
-});
-</script>
-<script type = "text/javascript">
-         
-            
-            function myFunction(name,job) {
-            document.getElementById("demo").innerHTML = "Showing total no. of Positive cases from<h5>" + name + ":</h5>" + job + ".";
-                                          }
-                                
-      </script>
+    }
+
+
+  </script>
 </body>
+
 </html>
