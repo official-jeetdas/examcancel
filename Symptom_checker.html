@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <title>COVID-19 Symptom Checker</title>
+    <style>
+        .card {
+            margin-top: 10%;
+            background: linear-gradient(to bottom, #FF416C 0%, #FF4B2B 100%);
+        }
+
+        .card-header {
+            font-size: 30px;
+        }
+
+        .jumbotron {
+            margin-top: 10%;
+            border: 1px solid;
+            box-shadow: 5px 10px 13px #363636;
+        }
+
+        .display-6 {
+            color: #754fbd;
+        }
+    </style>
+
+</head>
+
+<body class="text-monospace" style="background-color:  #f1efe4">
+
+    <nav class="navbar navbar-light" style="background-color:#ff6666; box-shadow: 5px 10px 13px #363636;">
+        <a class="navbar-brand" href="#" style="color: azure">
+            <h5>COVID-19 Symptom Checker</h5>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.who.int/">world Health Org.</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                Navbar text with an inline element
+            </span>
+    </nav>
+
+    <section class="main">
+        <div class="container text-center">
+            <div class="jumbotron">
+                <h6 class="display-6">Answer few simple questions and know about
+                    your COVID-19 risk, and navigate to the most appropriate care setting. </h6>
+                <hr class="my-4">
+                <div class="card text-white bg-primary mb-3 container"
+                    style="max-width: 95%; box-shadow: 5px 10px 13px #363636;">
+                    <div class="card-body">
+                        <h5 class="card-title">Let's start</h5>
+
+                        <br><br>
+
+                        <div id="swapper-first" style="display:block">
+                            <p>
+                                The only way to confirm if you have
+                                COVID-19 is to get tested with a kit,
+                                and those are in short supply. However,
+                                I can still help you figure out if you
+                                should seek medical care.I will ask you a
+                                few questions, and at the end, I will give
+                                you some advice.Ready to begin?
+                            </p>
+                            <row>
+                                <a href="index.html"><button class="btn btn-light"
+                                        style="margin-right: 40%;">Nah</button></a>
+                                <a href="javascript:SwapDivsWithClick('swapper-first','swapper-second')"><button
+                                        class="btn btn-light">Yes</button></a>
+                            </row>
+                        </div>
+
+
+
+
+                        <div id="swapper-second" style="display:none">
+                            <p>
+                                <form name="myform" class="text-left">
+                                    1>Have you recently traveled to an area of high-risk for COVID-19?<br>
+                                    <input type="radio" id="myRadio"  name="q1" value="a">&nbsp;yes <br>
+                                    <input type="radio" id="myRadio" name="q1" value="b">&nbsp;no <br>
+                                    <hr>
+
+                                    2>Have you been around someone who recently traveled to one of those high-risk areas
+                                    and is also sick?<br>
+                                    <input type="radio" id="myRadio" name="q2" value="a">&nbsp;yes <br>
+                                    <input type="radio" id="myRadio" name="q2" value="b">&nbsp;no <br>
+                                    <hr>
+
+                                    3>Have you been around someone who is known to have the Coronavirus (COVID-19)?<br>
+                                    <input type="radio" id="myRadio" name="q3" value="a">&nbsp;yes <br>
+                                    <input type="radio" id="myRadio" name="q3" value="b">&nbsp;no <br>
+                                    <hr>
+
+                                    4>Have you been told by a health official that you may have been exposed to the
+                                    virus?<br>
+                                    <input type="radio" id="myRadio" name="q4" value="a">&nbsp;yes <br>
+                                    <input type="radio" id="myRadio" name="q4" value="b">&nbsp;no <br>
+                                    <hr>
+
+                                    5>Have you had a fever recently? Or do you think you have a fever?<br>
+                                    <input type="radio" id="myRadio" name="q5" value="a">&nbsp;yes <br>
+                                    <input type="radio" id="myRadio" name="q5" value="b">&nbsp;no <br>
+                                    <hr>
+
+                                    6>Do you have a cough?<br>
+                                    <input type="radio" id="myRadio" name="q6" value="a">&nbsp;yes <br>
+                                    <input type="radio" id="myRadio" name="q6" value="b">&nbsp;no <br>
+                                    <hr>
+
+                                    7>Just being thorough <br> Do you have any of these?<br>
+                                    <ul>
+                                        <li>Fatigue</li>
+                                        <li>Body aches</li>
+                                        <li>Sore throat</li>
+                                    </ul>
+                                    <input type="radio" id="myRadio" name="q7" value="a">&nbsp;yes <br>
+                                    <input type="radio" id="myRadio" name="q7" value="b">&nbsp;no <br>
+                                    <hr>
+
+                                    8>Have you experienced the following?<br>
+                                    <ul>
+                                        <li> Recent diarrhea</li>
+                                        <li> Reduced sense of smell</li>
+                                    </ul>
+                                    <input type="radio" id="myRadio" name="q8" value="a">&nbsp;yes <br>
+                                    <input type="radio" id="myRadio" name="q8" value="b">&nbsp;no <br>
+                                    <hr>
+
+                                    9>Are you feeling mild to moderate shortness of breath or mild to moderate
+                                    difficulty breathing?<br>
+                                    <input type="radio" id="myRadio" name="q9" value="a">&nbsp;yes <br>
+                                    <input type="radio" id="myRadio" name="q9" value="b">&nbsp;no <br>
+                                    <hr>
+
+                                    10>COVID-19 can affect the elderly or the very young more seriously than others.
+                                    How old are you?<br>
+                                    &nbsp;&nbsp;&nbsp;<input id="numb" placeholder="Enter Age"
+                                        style="border-radius: 5px;"><br>
+                                    <hr>
+
+                                    11>Are you experiencing symptoms that feel like a life-threatening medical
+                                    emergency? <br>For example: <br>
+                                    <ul>
+                                        <li>Severe shortness of breath and difficulty breathing</li>
+                                        <li>Crushing chest pain</li>
+                                        <li> Loss of consciousness</li>
+                                        <li>Slurred speech</li>
+                                        <li>Gasping for air</li>
+                                        <li>Coughing up lots of blood</li>
+
+                                    </ul>
+                                    <input type="radio" id="myRadio" name="q11" value="a" onclick="myFunction()">&nbsp;yes <br>
+                                    <input type="radio" id="myRadio" name="q11" value="b" onclick="myFunction()">&nbsp;no <br>
+                                    <hr>
+
+                                    12>Do you have any of the following?<br>
+                                    <ul>
+                                        <li>High blood pressure</li>
+                                        <li>Diabetes</li>
+                                        <li>Heart disease</li>
+                                        <li>Lung disease</li>
+                                        <li>Kidney disease</li>
+                                        <li>Liver disease</li>
+                                        <li> History of asthma</li>
+                                        <li>History of smoking</li>
+                                    </ul>
+                                    <input type="radio" id="myRadio" name="q12" value="a" onclick="myFunction()">&nbsp;yes <br>
+                                    <input type="radio" id="myRadio" name="q12" value="b" onclick="myFunction()">&nbsp;no <br>
+                                    <hr>
+
+                                    <p>
+                                        <h6>COVID-19 can affect people who have weaker immune systems
+                                            from things like chemotherapy, HIV/AIDS, organ transplant, being
+                                            pregnant, or prolonged steroid use.</h6>
+                                    </p>
+                                    <hr>
+
+                                    13>Do you have a weakened immune system from a known cause?
+                                    <input type="radio" id="myRadio" name="q13" value="a" onclick="myFunction()">&nbsp;yes <br>
+                                    <input type="radio" id="myRadio" name="q13" value="b" onclick="myFunction()">&nbsp;no <br>
+                                    <hr>
+
+                                    <input type="button" value="Verify data" id="bt" onclick="toggle(this);check();">
+                                    <input type="reset" value="Reset">
+                                </form>
+                            </p>
+                        </div>
+
+                        <div style="border:solid 1px #ddd; padding:10px; display:none;" id="cont">
+                            <div>
+                                <p id="demo"></p>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+
+
+    <script type="text/javascript">
+        function SwapDivsWithClick(div1, div2) {
+            d1 = document.getElementById(div1);
+            d2 = document.getElementById(div2);
+
+            if (d2.style.display == "none") {
+                d1.style.display = "none";
+                d2.style.display = "block";
+            } else {
+                d1.style.display = "block";
+                d2.style.display = "none";
+            }
+        }
+    </script>
+
+    <script>
+        function toggle(ele) {
+            var cont = document.getElementById('cont');
+            if (cont.style.display == 'block') {
+                cont.style.display = 'none';
+
+                document.getElementById(ele.id).value = 'View report';
+            } else {
+                cont.style.display = 'block';
+                document.getElementById(ele.id).value = 'submit';
+            }
+        }
+    </script>
+
+    <script>
+        function myFunction() {
+            var x, text;
+
+            // Get the value of the input field with id="numb"
+            x = document.getElementById("numb").value;
+
+            // If x is Not a Number or less than one or greater than 10
+            if (isNaN(x) || x < 1 || x > 105) {
+                swal("Error!", "Enter valid age!", "error");
+            } else {
+                SwapDivsWithClick('swapper-second', 'swapper-third')
+            }
+
+        }
+    </script>
+
+    <script>
+        function check() {
+            var q1 = document.myform.q1.value;
+            var q2 = document.myform.q2.value;
+            var q3 = document.myform.q3.value;
+            var q4 = document.myform.q4.value;
+            var q5 = document.myform.q5.value;
+            var q6 = document.myform.q6.value;
+            var q7 = document.myform.q7.value;
+            var q8 = document.myform.q8.value;
+            var q9 = document.myform.q9.value;
+            var q11 = document.myform.q11.value;
+            var q12 = document.myform.q12.value;
+            var q13 = document.myform.q13.value;
+            var count = 0;
+
+            if (q1 == "b") {
+                count++;
+            }
+            if (q2 == "b") {
+                count++;
+            }
+            if (q3 == "b") {
+                count++;
+            }
+            if (q4 == "b") {
+                count++;
+            }
+            if (q5 == "b") {
+                count++;
+            }
+            if (q6 == "b") {
+                count++;
+            }
+            if (q7 == "b") {
+                count++;
+            }
+            if (q8 == "b") {
+                count++;
+            }
+            if (q9 == "b") {
+                count++;
+            }
+            if (q11 == "b") {
+                count++;
+            }
+            if (q12 == "b") {
+                count++;
+            }
+            if (q13 == "b") {
+                count++;
+            }
+            if (count == 12) {
+                document.getElementById("demo").innerHTML = "congratulations";
+            } else {
+                document.getElementById("demo").innerHTML = "tgrtgrgtrgt";
+            }
+
+            if(document.getElementById("myRadio").checked)
+            {
+                swal("Success", "Congratulation", "success");
+                
+            }else{
+                swal("Error!", "Every option is necessary", "error");
+            }
+
+        }
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
